@@ -1,3 +1,5 @@
+So, hi i tried to make it work and i got it but i need a few help with all coordinate. I made some of them but yeah need help. BTW it works better if you use big siwe GUI in scr settings 
+
 # SCR-Autopilot
 Hello,
 MaTY-MT/SCR-Autopilot is archived, and I have a couple reasons why:
