@@ -1,4 +1,4 @@
-So, hi i tried to make it work and i got it but i need a few help with all coordinate. I made some of them but yeah need help. BTW it works better if you use big siwe GUI in scr settings 
+So, hi i tried to make it work and i got it but i need a few help with all coordinate. I made some of them but yeah need help. BTW it works better if you use big siwe GUI in scr settings. I removed some code from the origanal main.py script cuz it makes everything worse so i removed it 
 
 # SCR-Autopilot
 Hello,
