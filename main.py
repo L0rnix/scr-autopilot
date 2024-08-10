@@ -98,48 +98,26 @@ if __name__ == '__main__':
     continue_route = False
 
     print("SCR-Autopilot v0.4.1-beta by MaTY")
-    
-    print("Checking for updates...")
-    URL = "https://matyapi.matymt.repl.co/scr-autopilot/newest-version"
-    r = requests.get(url=URL)
-    data = r.json()
-    version = data['version']
-    if not version == "0.4.1":
-        print("Your version is outdated! Please install the latest release on https://github.com/scr-autopilot/scr-autopilot/releases")
-        outdatedask = messagebox.askyesno(
-            "SCR-Autopilot", "Your version of SCR-Autopilot is outdated. Do you want to go to the releases page to download a new version?")
-        if outdatedask == True:
-            webbrowser.open(
-                "https://github.com/scr-autopilot/scr-autopilot/releases")
-            exit()
-    else:
-        print("Your version is up-to-date.")
-    logging.basicConfig(filename='autopilot.log', filemode='w',
-                        level=logging.DEBUG, format="[%(levelname)s] [%(asctime)s] %(message)s")
-    print("\nDisclaimer:\nSCR-Autopilot is still in a beta version so it can't handle some situations well.\nWe recommend using SCR-Autopilot on private servers.\nUSE OF THIS SOFTWARE AT YOUR RISK.\nWaiting for the user input in the dialog box.")
-    warningask = messagebox.askokcancel("Disclaimer", "SCR-Autopilot is still in a beta version so it can't handle some situations well.\nWe recommend using SCR-Autopilot on private servers.\n\nUSE OF THIS SOFTWARE AT YOUR RISK.", icon='warning')
-    if warningask == False:
-        exit()
     display_size = ImageGrab.grab().size
     logging.debug(f'Display resolution: {display_size[0]}, {display_size[1]}')
     resolution = simpledialog.askstring(
         "Question", "What is the resolution? (fhd, hd)")
     if resolution == "fhd":
-        spd_pos = 884, 957, 947, 985
-        lim_pos = 889, 987, 942, 1016
-        green_pos = 1440, 983, 1441, 984
-        yellow_pos = 1438, 1016, 1439, 1017
-        double_yellow_pos = 1438, 950, 1439, 951
-        red_pos = 1438, 1045, 1439, 1046
-        distance_pos = 555, 1046, 605, 1070
-        awsbutton_pos = 1330, 994, 1331, 995
-        throttle_pos = 843, 931, 845, 1074
-        doors_pos = 870, 822, 871, 823
-        loading_pos = 781, 823, 782, 824
+        spd_pos = 878, 858, 946, 905
+        lim_pos = 863, 906, 944, 940
+        green_pos =  1543, 928, 1597, 960 
+        yellow_pos = 1542, 888, 1595, 923
+        double_yellow_pos = 1548, 851, 1591, 883
+        red_pos = 1538, 970, 1592, 1002
+        distance_pos = 454, 974, 507, 1006
+        awsbutton_pos = 1337, 837, 1516, 1004
+        throttle_pos = 825, 835, 826, 1012
+        doors_pos = 1160, 702, 1160, 702
+        loading_pos = 914, 697, 914, 697
         continue_pos = 1032, 460, 1033, 461
-        undershoot_pos = 709, 906, 710, 907
-        awaiting_pos = 862, 823, 863, 824
-        buzzer_pos = 824, 816, 825, 817
+        undershoot_pos = 1347, 836, 1520, 1004
+        awaiting_pos = 1347, 836, 1520, 1004
+        buzzer_pos = 1347, 836, 1520, 1004
     elif resolution == "hd":
         messagebox.showerror(
             "Error", 'HD resolution is not supported in this version of SCR-Autopilot. Please install v0.3.1-beta to use the HD resolution.')
@@ -224,6 +202,7 @@ if __name__ == '__main__':
     print("Automatically continue:", continue_route)
 
 
+
     def task():
         global solve
         global continuing
@@ -236,8 +215,8 @@ if __name__ == '__main__':
             continue_value = pix[0, 0]  # Set the RGBA Value of the image (tuple)
             if continue_value == (255, 255, 255):
                 continuing = True
-                ahk.click(991, 470)
-                ahk.click(327, 833)
+                ahk.click(1337, 837)
+                ahk.click(1516, 1004)
         im = ImageGrab.grab(bbox=(awsbutton_pos))
         pix = im.load()
         awsbutton_value = pix[0, 0]  # Set the RGBA Value of the image (tuple)
@@ -391,7 +370,7 @@ if __name__ == '__main__':
                             pydirectinput.keyDown("w")
                             time.sleep(0.4)
                             pydirectinput.keyUp("w")
-                        if doors_value == (255, 255, 255):
+                        if doors_value == (5,147,218,255):
                             print("CLOSING DOORS")
                             pydirectinput.keyDown("t")
                             pydirectinput.keyUp("t")
